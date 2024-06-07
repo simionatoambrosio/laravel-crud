@@ -37,11 +37,11 @@ class ClientesController extends Controller
         // salvar os dados na tabela Clientes
         // tem que usar o método post
 
-        $request->validate([
-            'nome' => 'required|string|max:255',
-            'telefone' => 'required|string|max:15',
-            'idade' => 'required|integer|min:0',
-        ]);
+        // $request->validate([
+        //     'nome' => 'required|string|max:255',
+        //     'telefone' => 'required|string|max:15',
+        //     'idade' => 'required|integer|min:0',
+        // ]);
 
         Clientes::create([
             'nome' => $request->input('nome'),

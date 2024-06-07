@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\FornecedorController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -50,7 +51,13 @@ Route::get('/mensagem/{mensagem}', [HomeController::class, 'mostrarMensagem']);
 Route::resources([
     'clientes' => ClientesController::class,
     #produtos => ProdutosController::class
-]
-);
+]);
 // rota adicional para o método delete que foi criado no controller
 Route::get('/clientes/{id}/delete', [ClientesController::class, 'delete']);
+
+Route::resources([
+    'fornecedor' => FornecedorController::class,
+    #produtos => ProdutosController::class
+]);
+
+Route::get('/fornecedor/{id}/delete', [FornecedorController::class, 'delete']);
